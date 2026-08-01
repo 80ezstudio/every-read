@@ -2,97 +2,381 @@
 <html lang="en-GB">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="Zzb3ky7TeV4G44QqcS3FZFf69tjF3yTjyKA4xF2Xr3A">
-  <title>Every Read — Book Tracker & Reading Journal</title>
-  <meta name="description" content="Track books, save notes and quotes, set gentle goals and remember every read in one calm Android app.">
-  <meta name="theme-color" content="#f3ecdf">
+  <title>Every Read — Private book tracker and reading journal for Android</title>
+  <meta name="description" content="Track books, update your reading progress, and save private notes and quotes. Every Read is a calm Android book tracker that is free to start.">
+  <meta name="theme-color" content="#f5efe4">
+  <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://80ezstudio.github.io/every-read/">
-  <meta property="og:title" content="Every Read — Your reading life, remembered">
-  <meta property="og:description" content="A calm book tracker and reading journal for Android. Private by default and free to begin.">
+  <link rel="icon" href="every-read-icon.webp" type="image/webp">
+  <link rel="apple-touch-icon" href="every-read-icon.webp">
+  <link rel="stylesheet" href="home.css?v=20260801-5">
+
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Every Read">
+  <meta property="og:title" content="Every Read — Remember more from every book">
+  <meta property="og:description" content="A calm, private book tracker and reading journal for Android. Free to start.">
   <meta property="og:url" content="https://80ezstudio.github.io/every-read/">
   <meta property="og:image" content="https://80ezstudio.github.io/every-read/app-home.webp">
-  <meta property="og:image:alt" content="Every Read Android app showing a personal reading library">
+  <meta property="og:image:alt" content="Every Read — remember more from every book">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Every Read — Your reading life, remembered">
-  <meta name="twitter:description" content="A calm book tracker and reading journal for Android. Private by default and free to begin.">
+  <meta name="twitter:title" content="Every Read — Remember more from every book">
+  <meta name="twitter:description" content="A calm, private book tracker and reading journal for Android. Free to start.">
   <meta name="twitter:image" content="https://80ezstudio.github.io/every-read/app-home.webp">
-  <link rel="icon" href="every-read-icon.webp">
-  <link rel="stylesheet" href="styles.css">
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MobileApplication",
-    "name": "Every Read: Book Tracker",
-    "description": "A calm Android book tracker and reading journal for books, progress, notes, quotes and gentle reading goals.",
-    "applicationCategory": "BookApplication",
+    "@type": "SoftwareApplication",
+    "name": "Every Read",
+    "applicationCategory": "LifestyleApplication",
     "operatingSystem": "Android",
-    "installUrl": "https://play.google.com/store/apps/details?id=com.eightyezstudio.mybookshelf",
+    "description": "A private book tracker and reading journal for recording books, progress, notes, quotes, and reading goals.",
+    "url": "https://80ezstudio.github.io/every-read/",
+    "image": "https://80ezstudio.github.io/every-read/every-read-icon.webp",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.eightyezstudio.mybookshelf",
+    "author": {
+      "@type": "Organization",
+      "name": "80EZ Studio"
+    },
     "offers": {
       "@type": "Offer",
       "price": "0",
-      "priceCurrency": "GBP"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "80EZStudio"
+      "priceCurrency": "GBP",
+      "description": "Free to start, with an optional Every Read Pro subscription."
     }
   }
   </script>
 </head>
 <body>
-<main>
-  <header class="site-header shell">
-    <a class="brand" href="index.html"><img src="every-read-icon.webp" alt=""><span>Every Read</span></a>
-    <nav aria-label="Main navigation"><a href="#why">Why Every Read</a><a href="#features">Features</a><a href="#trust">Privacy</a></nav>
-    <a class="button button-small" href="https://play.google.com/store/apps/details?id=com.eightyezstudio.mybookshelf&amp;referrer=utm_source%3Deveryread_site%26utm_medium%3Dwebsite%26utm_campaign%3Dorganic_launch%26utm_content%3Dheader">Get the app</a>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="Every Read home">
+        <img src="every-read-icon.webp" alt="" width="42" height="42">
+        <span>Every Read</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#pro">Pro</a>
+        <a href="#resources">Resources</a>
+        <a href="#support">Support</a>
+      </nav>
+      <a class="button button-small" href="https://play.google.com/store/apps/details?id=com.eightyezstudio.mybookshelf&amp;referrer=utm_source%3Deveryread_site%26utm_medium%3Dwebsite%26utm_campaign%3Dofficial_homepage%26utm_content%3Dheader">Get the app</a>
+    </div>
   </header>
 
-  <section class="hero shell">
-    <div class="hero-copy">
-      <p class="eyebrow">A calmer reading companion</p>
-      <h1>Every book leaves<br>something behind.</h1>
-      <p class="hero-lede">Track what you read, capture what mattered and build a reading life worth remembering.</p>
-      <div class="hero-actions">
-        <a class="button" href="https://play.google.com/store/apps/details?id=com.eightyezstudio.mybookshelf&amp;referrer=utm_source%3Deveryread_site%26utm_medium%3Dwebsite%26utm_campaign%3Dorganic_launch%26utm_content%3Dhero">Download on Google Play <span>↗</span></a>
-        <a class="text-link" href="#why">See why it feels different <span>↓</span></a>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Your reading life, without the noise</p>
+          <h1>Remember more from every book.</h1>
+          <p class="hero-intro">Keep a beautiful record of what you read, where you are, and the words you want to return to. Every Read is private, calm, and free to start.</p>
+          <div class="hero-actions">
+            <a class="button button-primary store-button" href="https://play.google.com/store/apps/details?id=com.eightyezstudio.mybookshelf&amp;referrer=utm_source%3Deveryread_site%26utm_medium%3Dwebsite%26utm_campaign%3Dofficial_homepage%26utm_content%3Dhero" aria-label="Get Every Read on Google Play">
+              <span class="play-mark" aria-hidden="true">▶</span>
+              <span><small>Get it on</small>Google Play</span>
+            </a>
+            <a class="text-link" href="#how-it-works">See how it works <span aria-hidden="true">↓</span></a>
+          </div>
+          <ul class="quiet-facts" aria-label="App details">
+            <li>Free to start</li>
+            <li>Made for Android</li>
+            <li>Optional Pro</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual">
+          <span class="orbit orbit-one" aria-hidden="true"></span>
+          <span class="orbit orbit-two" aria-hidden="true"></span>
+          <div class="phone hero-phone" role="img" aria-label="Illustration of the Every Read app showing a current book, progress, and personal bookshelf">
+            <div class="phone-camera" aria-hidden="true"></div>
+            <div class="app-screen" aria-hidden="true">
+              <div class="app-status"><span>9:41</span><span>● ◒ ▰</span></div>
+              <div class="app-heading"><div><small>MY READING</small><strong>Home</strong></div><span class="app-menu">≡</span></div>
+              <div class="current-read-card">
+                <div class="current-page"><span>p. <strong>192</strong> / 300</span><span class="progress-edit">✎</span></div>
+                <div class="current-progress-row">
+                  <div class="app-progress"><span></span><i></i></div>
+                  <strong>64%</strong>
+                </div>
+                <div class="current-read-body">
+                  <span class="sample-cover cover-coral"></span>
+                  <div class="current-book-copy"><strong>The Quiet Chapter</strong><small>Started Jul 24, 2026</small><small class="note-count">▤&nbsp; 2 notes</small></div>
+                  <span class="note-action">▤</span>
+                </div>
+              </div>
+              <div class="app-stats"><div><strong>3</strong><small>Reading</small></div><div><strong>14</strong><small>Want to read</small></div><div><strong>8</strong><small>Finished</small></div><div><strong>1</strong><small>Paused</small></div></div>
+              <div class="app-shelf-title"><strong>Want to read</strong><span>View all →</span></div>
+              <div class="app-books"><span class="sample-cover cover-gold"></span><span class="sample-cover cover-teal"></span><span class="sample-cover cover-ink"></span><span class="sample-cover cover-paper"></span></div>
+              <div class="app-nav"><span>⌂</span><span>▥</span><span>✦</span><span>♙</span></div>
+            </div>
+          </div>
+          <div class="floating-card float-progress"><strong>Progress at a glance</strong><span>Pick up where you left off</span></div>
+          <div class="floating-card float-note"><span aria-hidden="true">✦</span><strong>Private notes</strong></div>
+        </div>
       </div>
-      <div class="quiet-proof"><span>No account required</span><span>Private by default</span><span>Start free</span></div>
+    </section>
+
+    <section class="principle-strip" aria-label="Every Read principles">
+      <div class="shell principle-grid">
+        <div><span>01</span><strong>Private by default</strong><p>Your notes and reading record are yours.</p></div>
+        <div><span>02</span><strong>Made for memory</strong><p>Keep the details that make a book stay with you.</p></div>
+        <div><span>03</span><strong>Calm, not crowded</strong><p>No public performance required.</p></div>
+      </div>
+    </section>
+
+    <section class="section features" id="features">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">Everything in its place</p>
+          <h2>A reading habit you’ll want to keep.</h2>
+          <p>Every Read helps you capture the whole journey—from choosing a book to remembering why it mattered.</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card feature-large warm">
+            <span class="feature-icon" aria-hidden="true">▥</span>
+            <p class="card-label">Your library</p>
+            <h3>See your reading life at a glance.</h3>
+            <p>Organise what you’re reading, what you’ve finished, and what you want to pick up next.</p>
+            <div class="mini-shelf" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          </article>
+
+          <article class="feature-card teal">
+            <span class="feature-icon" aria-hidden="true">↗</span>
+            <p class="card-label">Progress</p>
+            <h3>Make every page count.</h3>
+            <p>Update your page, see how far you have come, and celebrate every finish.</p>
+            <div class="ring" aria-hidden="true"><span>72%</span></div>
+          </article>
+
+          <article class="feature-card ink">
+            <span class="feature-icon" aria-hidden="true">“</span>
+            <p class="card-label">Private notes and quotes</p>
+            <h3>Keep the lines that found you.</h3>
+            <p>Save reflections and favourite passages beside the book they belong to.</p>
+          </article>
+
+          <article class="feature-card discovery-card">
+            <span class="feature-icon" aria-hidden="true">✦</span>
+            <p class="card-label">Recommendations</p>
+            <h3>Find what comes next.</h3>
+            <p>Browse recommendations and keep promising titles close until you’re ready to read them.</p>
+            <div class="recommendation-row" aria-hidden="true">
+              <div><span class="sample-cover cover-gold"></span><small>The Golden Hour</small></div>
+              <div><span class="sample-cover cover-teal"></span><small>A Long Way Home</small></div>
+              <div><span class="sample-cover cover-coral"></span><small>The Quiet Chapter</small></div>
+            </div>
+          </article>
+
+          <article class="feature-card feature-wide paper">
+            <div>
+              <span class="feature-icon" aria-hidden="true">◎</span>
+              <p class="card-label">Reading goals</p>
+              <h3>Choose a pace that feels like yours.</h3>
+              <p>Set goals, follow your progress, and build momentum without turning reading into a chore.</p>
+            </div>
+            <div class="goal-calendar" aria-hidden="true">
+              <span class="filled"></span><span></span><span class="filled"></span><span class="filled"></span><span></span><span class="filled"></span><span class="today"></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section journey" id="how-it-works">
+      <div class="shell">
+        <div class="section-heading journey-heading">
+          <p class="eyebrow">Start in moments</p>
+          <h2>From first book to lasting memory.</h2>
+          <p>Add a book, keep your place, and save what you want to remember. No elaborate setup needed.</p>
+        </div>
+
+        <div class="journey-grid">
+          <article class="journey-step">
+            <div class="step-copy"><span>01</span><h3>Add your book</h3><p>Search for a title and place it on the shelf that matches your reading life.</p></div>
+            <div class="journey-preview search-preview" aria-label="Illustration of searching for a book in Every Read">
+              <div class="preview-label">SEARCH BOOKS</div>
+              <div class="preview-search"><span>⌕</span><strong>Search by title, author or ISBN</strong></div>
+              <div class="preview-result"><span class="sample-cover cover-gold"></span><div><strong>The Golden Hour</strong><small>A thoughtful new read</small></div><span>＋</span></div>
+              <div class="preview-result muted-result"><span class="sample-cover cover-teal"></span><div><strong>A Long Way Home</strong><small>Save for later</small></div><span>＋</span></div>
+            </div>
+          </article>
+          <article class="journey-step journey-reverse">
+            <div class="step-copy"><span>02</span><h3>Keep your place</h3><p>Update your page and see your progress without turning reading into admin.</p></div>
+            <div class="journey-preview progress-preview" aria-label="Illustration of updating reading progress in Every Read">
+              <div class="preview-label">CURRENT READ</div>
+              <div class="preview-book"><span class="sample-cover cover-coral"></span><div><strong>The Quiet Chapter</strong><small>Currently reading</small></div></div>
+              <div class="preview-progress-meta"><span>Page 192 of 300</span><strong>64%</strong></div>
+              <div class="preview-progress"><span></span></div>
+              <div class="preview-button">Update progress</div>
+            </div>
+          </article>
+          <article class="journey-step">
+            <div class="step-copy"><span>03</span><h3>Save what mattered</h3><p>Keep a private note, a quote, or both, connected to the book and page.</p></div>
+            <div class="journey-preview note-preview" aria-label="Illustration of saving a private reading note in Every Read">
+              <div class="preview-label">PRIVATE NOTE · PAGE 192</div>
+              <span class="large-quote">“</span>
+              <p>A thought worth keeping, close to the book that inspired it.</p>
+              <div class="note-options"><span>Note</span><span>Quote</span><span>Quote &amp; note</span></div>
+              <div class="preview-button">Save privately</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section privacy-section">
+      <div class="shell privacy-grid">
+        <div class="privacy-art" role="img" aria-label="Illustration of a private reading note that only its writer can see">
+          <div class="private-note-sheet" aria-hidden="true">
+            <div class="private-note-label"><span>●</span> PRIVATE NOTE · PAGE 192</div>
+            <span class="private-quote">“</span>
+            <p>A thought worth keeping, close to the book that inspired it.</p>
+            <div class="private-note-options"><span>Note</span><span>Quote</span><span>Quote &amp; note</span></div>
+            <div class="private-note-footer"><span>⌾</span> Only you can see this</div>
+          </div>
+          <div class="privacy-promise" aria-hidden="true"><span>✓</span><div><strong>Yours by default</strong><small>No audience. No pressure.</small></div></div>
+        </div>
+        <div class="privacy-copy">
+          <p class="eyebrow">A personal space</p>
+          <h2>For readers, not performance.</h2>
+          <p>Your bookshelf can simply be your bookshelf. Keep notes privately, enjoy your own pace, and choose when community adds something useful.</p>
+          <ul class="check-list">
+            <li>Private notes stay personal</li>
+            <li>Start without an account</li>
+            <li>Community features are optional</li>
+          </ul>
+          <a class="text-link" href="https://80ezstudio.github.io/EveryRead/privacy-policy.html">Read the privacy policy <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pro-section" id="pro">
+      <div class="shell pro-panel">
+        <div class="pro-showcase">
+          <div class="pro-heading">
+            <p class="eyebrow light">Every Read Pro</p>
+            <h2>Add more to every reading journey.</h2>
+            <p>Keep everything you love about your private tracker, then add the people, motivation, and personal touches that make reading even more rewarding.</p>
+            <a class="button button-light" href="https://play.google.com/store/apps/details?id=com.eightyezstudio.mybookshelf&amp;referrer=utm_source%3Deveryread_site%26utm_medium%3Dwebsite%26utm_campaign%3Dofficial_homepage%26utm_content%3Dpro_hero">Get Every Read &amp; explore Pro</a>
+          </div>
+          <div class="community-stage" role="img" aria-label="Illustration of the Every Read Community Activity screen with reader updates and Page Partners">
+            <div class="community-mock" aria-hidden="true">
+              <div class="community-header"><strong>Community</strong><span>≡</span></div>
+              <div class="community-tabs"><strong>Activity</strong><span>Friends</span><span>Following</span><span>Page Partners</span></div>
+              <div class="activity-card">
+                <span class="reader-avatar avatar-coral">M</span>
+                <div class="activity-copy"><div><strong>Maya Reads</strong><small>2 hours ago</small></div><span>finished</span><div class="activity-book"><span class="sample-cover cover-gold"></span><div><strong>The Golden Hour</strong><small>Elena Marlow</small></div></div></div>
+              </div>
+              <div class="activity-card">
+                <span class="reader-avatar avatar-teal">J</span>
+                <div class="activity-copy"><div><strong>Jamie</strong><small>yesterday</small></div><span>started reading</span><div class="activity-book"><span class="sample-cover cover-teal"></span><div><strong>A Long Way Home</strong><small>Rowan Ellis</small></div></div></div>
+              </div>
+            </div>
+            <div class="partners-peek" aria-hidden="true">
+              <div><span class="partner-icon">◎</span><strong>Page Partners</strong></div>
+              <p>Read together, share thoughts, and discuss as you go.</p>
+              <div class="partner-readers"><span class="reader-avatar avatar-coral">M</span><span class="reader-avatar avatar-teal">J</span><span class="reader-avatar avatar-gold">A</span><strong>3 reading together</strong></div>
+            </div>
+          </div>
+        </div>
+        <div class="pro-grid">
+          <article><span class="pro-icon">◎</span><h3>Read together</h3><p>Use Page Partners one-to-one or with up to five friends to share thoughts, discuss the book, and chat as you go.</p></article>
+          <article><span class="pro-icon">●</span><h3>Find your reading people</h3><p>Follow readers, add friends, see what they’re reading, and control what appears on your reader profile.</p></article>
+          <article><span class="pro-icon">↗</span><h3>Keep every goal</h3><p>Create as many active reading goals as you need and keep every target together.</p></article>
+          <article><span class="pro-icon">✦</span><h3>Make it yours</h3><p>Unlock premium themes and the complete badge collection to personalise and celebrate your reading.</p></article>
+        </div>
+        <div class="pro-cta">
+          <p><strong>Your private reading space stays yours.</strong><br>Pro adds more ways to connect and personalise; current options and local pricing are shown inside Every Read.</p>
+          <a class="text-link pro-link" href="https://play.google.com/store/apps/details?id=com.eightyezstudio.mybookshelf&amp;referrer=utm_source%3Deveryread_site%26utm_medium%3Dwebsite%26utm_campaign%3Dofficial_homepage%26utm_content%3Dpro_footer">See Every Read on Google Play <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section resource-section" id="resources">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">Free reading resources</p>
+          <h2>Useful tools for a calmer reading life.</h2>
+          <p>Practical guides for remembering books, keeping a reading journal, resetting your TBR, and making book-club conversations more meaningful.</p>
+        </div>
+        <div class="resource-card-grid">
+          <a class="resource-card" href="remember-what-you-read.html"><span>Reading memory</span><h3>Remember more of what you read</h3><p>Simple ways to hold on to the ideas, moments, and lines that mattered.</p><strong>Read the guide →</strong></a>
+          <a class="resource-card" href="reading-journal-template.html"><span>Free template</span><h3>Start a reading journal</h3><p>A lightweight template you can use without turning reading into homework.</p><strong>Use the template →</strong></a>
+          <a class="resource-card" href="tbr-reset.html"><span>Calm reset</span><h3>Make your TBR feel possible again</h3><p>Reduce the pressure and choose a smaller, more inviting next-read list.</p><strong>Reset your TBR →</strong></a>
+          <a class="resource-card" href="book-club-questions.html"><span>Book clubs</span><h3>Ask better book-club questions</h3><p>Conversation prompts that go beyond “did you like it?”</p><strong>Browse questions →</strong></a>
+        </div>
+        <div class="resource-more">
+          <a href="book-tracker.html">Book tracker guide</a>
+          <a href="reading-journal.html">Reading journal guide</a>
+          <a href="tbr-tracker.html">TBR tracker guide</a>
+          <a href="help.html">Every Read help</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section questions" id="support">
+      <div class="shell question-grid">
+        <div class="section-heading question-heading">
+          <p class="eyebrow">Good to know</p>
+          <h2>A few questions, answered.</h2>
+        </div>
+        <div class="faq-list">
+          <details open>
+            <summary>Is Every Read free?</summary>
+            <p>Yes. You can start tracking books, progress, notes, and quotes for free. An optional Pro subscription adds collaboration, community, more goals, themes, and badges; current pricing is shown in the app. Pro and Community currently require an eligible account aged 18 or over.</p>
+          </details>
+          <details>
+            <summary>Can other people see my notes?</summary>
+            <p>Your private notes and quotes are for you. Community features are separate and optional.</p>
+          </details>
+          <details>
+            <summary>Do I need an account?</summary>
+            <p>No. You can begin with a local profile. An account is available when you want cloud and community features.</p>
+          </details>
+          <details>
+            <summary>Which devices are supported?</summary>
+            <p>Every Read is currently available for Android through Google Play.</p>
+          </details>
+          <details>
+            <summary>Where can I get help?</summary>
+            <p>Email <a href="mailto:80ezstudio@gmail.com">80ezstudio@gmail.com</a>, or use the support and account links below.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="shell final-cta-inner">
+        <div><p class="eyebrow">Your next chapter</p><h2>Make the books you read easier to remember.</h2></div>
+        <a class="button button-primary store-button" href="https://play.google.com/store/apps/details?id=com.eightyezstudio.mybookshelf&amp;referrer=utm_source%3Deveryread_site%26utm_medium%3Dwebsite%26utm_campaign%3Dofficial_homepage%26utm_content%3Dfooter" aria-label="Get Every Read on Google Play">
+          <span class="play-mark" aria-hidden="true">▶</span><span><small>Get it on</small>Google Play</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <a class="brand footer-brand" href="#top" aria-label="Every Read home">
+        <img src="every-read-icon.webp" alt="" width="42" height="42"><span>Every Read</span>
+      </a>
+      <p>A calmer home for every book you read.</p>
+      <div class="footer-links" aria-label="Support and legal links">
+        <a href="mailto:80ezstudio@gmail.com">Support</a>
+        <a href="https://80ezstudio.github.io/EveryRead/privacy-policy.html">Privacy</a>
+        <a href="https://80ezstudio.github.io/EveryRead/terms-and-conditions.html">Terms</a>
+        <a href="https://80ezstudio.github.io/EveryRead/credits.html">Credits</a>
+        <a href="https://80ezstudio.github.io/EveryRead/delete-account/">Delete account</a>
+      </div>
+      <p class="copyright">© 2026 80EZ Studio</p>
     </div>
-    <div class="hero-art" aria-label="Every Read app preview">
-      <div class="sun-disc"></div>
-      <div class="phone phone-main"><img src="app-home.webp" alt="Every Read home screen showing a personal reading library"></div>
-      <div class="margin-note">Your reading life,<br><em>not a reading race.</em></div>
-    </div>
-  </section>
-
-  <section class="manifesto" id="why"><div class="shell manifesto-grid">
-    <p class="section-label">Why Every Read</p>
-    <div><h2>A reading life is more than a list of finished books.</h2><p>It is the quote you copied down, the idea that stayed with you, the book you paused and found again at exactly the right time.</p></div>
-  </div></section>
-
-  <section class="feature-story shell" id="features">
-    <div class="story-copy"><p class="eyebrow">Remember what mattered</p><h2>Give every thought<br>a place to return to.</h2><p>Save private notes, favourite quotes and page references while the feeling is still fresh. Your library becomes a record of what your reading meant—not just what you completed.</p><a class="text-link" href="reading-journal.html">Explore the reading journal <span>→</span></a></div>
-    <div class="phone-pair"><div class="phone tilted-back"><img src="app-details.webp" alt="Book details and reading progress in Every Read"></div><div class="phone tilted-front"><img src="app-notes.webp" alt="Adding a private reading note in Every Read"></div></div>
-  </section>
-
-  <section class="benefit-band"><div class="shell benefit-grid">
-    <article><span class="benefit-number">01</span><h3>Keep the whole story</h3><p>Books, progress, notes, quotes and the thoughts you want to return to—held together in one personal library.</p></article>
-    <article><span class="benefit-number">02</span><h3>Make progress gently</h3><p>Set goals and follow your reading without streak anxiety, guilt or turning every chapter into a productivity contest.</p></article>
-    <article><span class="benefit-number">03</span><h3>Choose how social feels</h3><p>Keep reading private, share a book with Page Partners or join the wider community. Connection is always your choice.</p></article>
-  </div></section>
-
-  <section class="split-feature shell"><div class="phone solo-phone"><img src="app-goals.webp" alt="A gentle yearly reading goal in Every Read"></div><div class="story-copy"><p class="eyebrow">Progress, without pressure</p><h2>Your goals should encourage you—not judge you.</h2><p>Follow pages, dates and milestones in a way that supports the reader you are. Paused books belong here too.</p><a class="text-link" href="book-tracker.html">Explore the book tracker <span>→</span></a></div></section>
-
-  <section class="resource-band"><div class="shell resource-grid"><div><p class="eyebrow">Free reading resources</p><h2>Useful tools for a calmer reading life.</h2></div><div><p>Reset an overwhelming TBR, start a lightweight reading journal or bring better questions to your next book-club conversation.</p><div class="resource-links"><a class="text-link" href="remember-what-you-read.html">Remember more of what you read <span>→</span></a><a class="text-link" href="tbr-reset.html">Try a calm TBR reset <span>→</span></a><a class="text-link" href="reading-journal-template.html">Use the reading-journal template <span>→</span></a><a class="text-link" href="book-club-questions.html">Browse book-club questions <span>→</span></a></div></div></div></section>
-
-  <section class="trust-section" id="trust"><div class="shell trust-grid"><div><p class="eyebrow">Private by default</p><h2>Your reading life belongs to you.</h2></div><div class="trust-copy"><p>Start without an account. Keep your core library, progress, notes, quotes, ratings, goals and recommendations private. Create an account only when you want supported backup and synchronisation.</p><p>Community and Page Partners are optional Pro experiences for eligible adult readers, with profile privacy, blocking and reporting controls.</p><a class="text-link" href="https://80ezstudio.github.io/EveryRead/privacy-policy.html">Read the privacy policy <span>↗</span></a></div></div></section>
-
-  <section class="final-cta shell"><img src="every-read-icon.webp" alt="Every Read app icon"><p class="eyebrow">For every book you read, remember and return to.</p><h2>Make room for<br>every read.</h2><a class="button" href="https://play.google.com/store/apps/details?id=com.eightyezstudio.mybookshelf&amp;referrer=utm_source%3Deveryread_site%26utm_medium%3Dwebsite%26utm_campaign%3Dorganic_launch%26utm_content%3Dfooter_cta">Start free on Google Play <span>↗</span></a></section>
-
-  <footer class="site-footer shell"><a class="brand" href="index.html"><img src="every-read-icon.webp" alt=""><span>Every Read</span></a><div class="footer-links"><a href="book-tracker.html">Book Tracker</a><a href="reading-journal.html">Reading Journal</a><a href="tbr-tracker.html">TBR Tracker</a><a href="remember-what-you-read.html">Reading Guides</a><a href="help.html">Help</a><a href="https://80ezstudio.github.io/EveryRead/privacy-policy.html">Privacy</a></div><p>© 2026 80EZStudio</p></footer>
-</main>
+  </footer>
 </body>
 </html>
-
