@@ -1,0 +1,106 @@
+name: Every Read Disaster Recovery Snapshot
+
+on:
+  push:
+    branches:
+      - backup/disaster-recovery-2026-09-04
+    paths:
+      - .github/workflows/everyread-disaster-recovery.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  snapshot:
+    name: Create full repository recovery snapshot
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Check out the exact main branch with full history
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          fetch-tags: true
+          lfs: true
+          submodules: false
+
+      - name: Fetch optional Git LFS and submodule content
+        shell: bash
+        run: |
+          set -u
+          git lfs fetch --all || true
+          git lfs checkout || true
+          git submodule sync --recursive || true
+          git submodule update --init --recursive || true
+
+      - name: Create recovery files
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+          ORIGINAL_SHA="$(git rev-parse HEAD)"
+          SHORT_SHA="${ORIGINAL_SHA:0:12}"
+          OUT_ROOT="$RUNNER_TEMP/everyread-disaster-recovery"
+          OUT="$OUT_ROOT/$REPO_NAME"
+          mkdir -p "$OUT"
+
+          {
+            echo "Repository: $GITHUB_REPOSITORY"
+            echo "Source branch: main"
+            echo "Source commit: $ORIGINAL_SHA"
+            echo "Snapshot generated (UTC): $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+            echo "Workflow run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          } > "$OUT/SNAPSHOT-IDENTITY.txt"
+
+          git log -1 --date=iso-strict --format='Commit: %H%nTree: %T%nAuthor: %an <%ae>%nAuthor date: %aI%nCommitter: %cn <%ce>%nCommit date: %cI%nSubject: %s' \
+            > "$OUT/LATEST-COMMIT.txt"
+          git remote -v > "$OUT/REMOTES.txt"
+          git branch --all --verbose --no-abbrev > "$OUT/BRANCHES.txt"
+          git tag --list --format='%(refname:short) %(objectname)' > "$OUT/TAGS.txt"
+          git submodule status --recursive > "$OUT/SUBMODULES.txt" 2>&1 || true
+          git lfs ls-files --long > "$OUT/GIT-LFS-FILES.txt" 2>&1 || true
+          git status --short --branch > "$OUT/WORKTREE-STATUS.txt"
+          git ls-files > "$OUT/TRACKED-FILES.txt"
+
+          git bundle create "$OUT/${REPO_NAME}-full-history-${SHORT_SHA}.bundle" --all
+
+          git ls-files -z \
+            | tar --null --files-from=- -czf "$OUT/${REPO_NAME}-source-${SHORT_SHA}.tar.gz"
+
+          cat > "$OUT/RESTORE-THIS-REPOSITORY.md" <<EOF
+          # Restore $GITHUB_REPOSITORY
+
+          ## Fast source restore
+
+          Extract `${REPO_NAME}-source-${SHORT_SHA}.tar.gz` into a new folder.
+
+          ## Full Git restore
+
+          ```bash
+          git clone ${REPO_NAME}-full-history-${SHORT_SHA}.bundle ${REPO_NAME}
+          cd ${REPO_NAME}
+          git checkout main
+          ```
+
+          The bundle contains the Git objects and refs available in the full checkout. The source archive contains the tracked working tree at commit `${ORIGINAL_SHA}`.
+
+          Files intentionally excluded from Git, such as local secrets, signing keys, service credentials, and build caches, are not present unless they were already tracked. Review the master recovery guide in the combined Every Read disaster recovery package.
+          EOF
+
+          (
+            cd "$OUT"
+            sha256sum -- * > SHA256SUMS.txt
+          )
+
+      - name: Upload recovery snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: EveryRead-DR-${{ github.event.repository.name }}-${{ github.run_id }}
+          path: ${{ runner.temp }}/everyread-disaster-recovery/
+          if-no-files-found: error
+          retention-days: 90
+          compression-level: 0
