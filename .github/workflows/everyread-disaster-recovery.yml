@@ -71,25 +71,25 @@ jobs:
           git ls-files -z \
             | tar --null --files-from=- -czf "$OUT/${REPO_NAME}-source-${SHORT_SHA}.tar.gz"
 
-          cat > "$OUT/RESTORE-THIS-REPOSITORY.md" <<EOF
-          # Restore $GITHUB_REPOSITORY
-
-          ## Fast source restore
-
-          Extract `${REPO_NAME}-source-${SHORT_SHA}.tar.gz` into a new folder.
-
-          ## Full Git restore
-
-          ```bash
-          git clone ${REPO_NAME}-full-history-${SHORT_SHA}.bundle ${REPO_NAME}
-          cd ${REPO_NAME}
-          git checkout main
-          ```
-
-          The bundle contains the Git objects and refs available in the full checkout. The source archive contains the tracked working tree at commit `${ORIGINAL_SHA}`.
-
-          Files intentionally excluded from Git, such as local secrets, signing keys, service credentials, and build caches, are not present unless they were already tracked. Review the master recovery guide in the combined Every Read disaster recovery package.
-          EOF
+          {
+            echo "# Restore $GITHUB_REPOSITORY"
+            echo
+            echo "## Fast source restore"
+            echo
+            echo "Extract \`${REPO_NAME}-source-${SHORT_SHA}.tar.gz\` into a new folder."
+            echo
+            echo "## Full Git restore"
+            echo
+            echo '```bash'
+            echo "git clone ${REPO_NAME}-full-history-${SHORT_SHA}.bundle ${REPO_NAME}"
+            echo "cd ${REPO_NAME}"
+            echo "git checkout main"
+            echo '```'
+            echo
+            echo "The bundle contains the Git objects and refs available in the full checkout. The source archive contains the tracked working tree at commit \`${ORIGINAL_SHA}\`."
+            echo
+            echo "Files intentionally excluded from Git, such as local secrets, signing keys, service credentials, and build caches, are not present unless they were already tracked. Review the master recovery guide in the combined Every Read disaster recovery package."
+          } > "$OUT/RESTORE-THIS-REPOSITORY.md"
 
           (
             cd "$OUT"
