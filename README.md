@@ -17,7 +17,10 @@ Cloudflare Pages hosts the website. GitHub holds its source and deployment histo
 
 The build copies only public site assets, maps canonical URLs and internal page links to
 Cloudflare's extensionless URLs, and validates the sitemap against the output pages.
-The production `pages.dev` address redirects permanently to the custom domain.
+The production `pages.dev` address redirects permanently to the custom domain via
+the Cloudflare account Bulk Redirect list `every_read_canonical` and rule
+`Every Read canonical website`. The 301 redirect preserves paths and query strings.
+This is account configuration: Pages `_redirects` does not support hostname rules.
 
 The root `CNAME` is retained for the legacy GitHub Pages URL to redirect visitors to
 the canonical domain. It is excluded from Cloudflare's deployed files. DNS for the

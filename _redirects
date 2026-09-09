@@ -1,1 +1,3 @@
-https://every-read-80ezstudio.pages.dev/* https://everyread.80ezstudio.com/:splat 301
+# Hostname redirects are configured in Cloudflare account Bulk Redirects.
+# List: every_read_canonical; rule: Every Read canonical website.
+# Pages _redirects supports path rules, not hostname-level redirects.
