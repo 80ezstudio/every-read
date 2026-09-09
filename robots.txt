@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://80ezstudio.github.io/every-read/sitemap.xml
+Sitemap: https://everyread.80ezstudio.com/sitemap.xml
