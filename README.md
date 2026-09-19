@@ -1,6 +1,6 @@
 # every-read
 
-Official website for Every Read — a calm book tracker and reading journal for Android.
+Official website for Every Read — a calm book tracker and reading journal for Android and iPhone.
 
 Canonical public host: `https://everyread.80ezstudio.com/`
 
