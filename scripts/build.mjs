@@ -76,6 +76,15 @@ for (const { page, resource, source, medium } of resourceCampaigns) {
   // are for sharing, not additional search results.
   html = html.replace(/<meta\s+name="robots"[^>]*>/gi, '')
     .replace('</head>', '<meta name="robots" content="noindex, follow"></head>');
+  if (source === 'reading_groups') {
+    const articleBody = '<div class="article-body shell">';
+    if (!html.includes(articleBody)) throw new Error('Reading groups resource body is missing');
+    html = html.replace(articleBody, articleBody +
+      '<section><h2>Keep track of the books you read together</h2>' +
+      '<p>For parents and carers: keep a list of your read-aloud books, mark where you stopped, ' +
+      'and save a little note about the stories you enjoyed together. Start with the free template ' +
+      'below, or keep your shared reading memories in your own Every Read journal.</p></section>');
+  }
   if (!html.includes(`rel="canonical" href="${canonical}${pagePath(resource)}"`) ||
       !html.includes('content="noindex, follow"') ||
       !html.includes(`href="${appleLink}"`) || !html.includes(`href="${play}"`) ||

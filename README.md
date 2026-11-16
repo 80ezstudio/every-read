@@ -38,7 +38,7 @@ download buttons:
 
 | Channel | Link | Free resource |
 | --- | --- | --- |
-| Reading groups | [Reading groups](https://everyread.80ezstudio.com/reading-groups) | Reading journal template |
+| Reading groups and families | [Reading groups](https://everyread.80ezstudio.com/reading-groups) | Reading journal template and a read-aloud idea for parents and carers |
 | Book clubs | [Book clubs](https://everyread.80ezstudio.com/book-clubs) | Book club discussion questions |
 | Instagram | [Bookstagram](https://everyread.80ezstudio.com/bookstagram) | Reading journal template |
 
