@@ -5,6 +5,8 @@ import path from 'node:path';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const output = path.join(root, 'dist');
 const canonical = 'https://everyread.80ezstudio.com';
+const appStore = 'https://apps.apple.com/app/id6804274073';
+const googlePlay = 'https://play.google.com/store/apps/details?id=com.eightyezstudio.mybookshelf';
 const pages = [
   'index.html', 'book-tracker.html', 'reading-journal.html', 'tbr-tracker.html',
   'remember-what-you-read.html', 'tbr-reset.html', 'reading-journal-template.html',
@@ -38,6 +40,11 @@ for (const file of pages) {
   }
   if (html.includes('https://80ezstudio.github.io/every-read')) {
     throw new Error(`Legacy product host found: ${file}`);
+  }
+  const links = [...html.matchAll(/<a\b[^>]+\bhref="([^"]+)"/g)].map(match => match[1]);
+  const hasPlayLink = links.some(link => link === googlePlay || link.startsWith(`${googlePlay}&amp;referrer=`));
+  if (!links.includes(appStore) || !hasPlayLink) {
+    throw new Error(`Missing an Every Read store download link: ${file}`);
   }
   await writeFile(path.join(output, file), html);
 }
