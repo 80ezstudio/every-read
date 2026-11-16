@@ -29,3 +29,20 @@ custom domain must point to the Cloudflare Pages project, not to GitHub Pages.
 Submit `https://everyread.80ezstudio.com/sitemap.xml` in the `80ezstudio.com` Search
 Console domain property (or the matching HTTPS URL-prefix property). Keep the old
 property for historical reporting while Google processes the move.
+
+## Share links
+
+Share a free resource first. Each URL serves the corresponding existing resource
+with different App Store campaign and Google Play referral parameters on both
+download buttons:
+
+| Channel | Link | Free resource |
+| --- | --- | --- |
+| Reading groups | [Reading groups](https://everyread.80ezstudio.com/reading-groups) | Reading journal template |
+| Book clubs | [Book clubs](https://everyread.80ezstudio.com/book-clubs) | Book club discussion questions |
+| Instagram | [Bookstagram](https://everyread.80ezstudio.com/bookstagram) | Reading journal template |
+
+The three share pages are not indexed; the original resources remain canonical.
+There are no new cookies, tracking scripts or app permissions. Apple campaign
+reporting can suppress small counts, and store listing clicks are not verified
+downloads or new paid subscriptions. Do not compare or add those measures.
